@@ -1,0 +1,29 @@
+#!/bin/bash
+
+echo "Checking pipenv module installation..."
+PIPENV_INSTALLED=$(pip list | grep -c pipenv)
+if (("PIPENV_INSTALLED" == 0))
+then
+	echo -n "Need to install pipenv module. Continue?[Y/n]"
+	read -r item
+	case "$item" in
+		y|Y) echo "Continue..."
+			$(pip install pipenv)
+		;;
+		n|N) echo "Cancelling by user..."
+		exit 0
+		;;
+		*) echo "Wrong command. Cancelling..."
+		;;
+	esac
+else
+	echo "Pipenv is already installed. Continue..."
+fi
+
+export PIPENV_VENV_IN_PROJECT=1
+cd backend
+pipenv install
+
+pipenv shell
+
+./prj/manage.py migrate
