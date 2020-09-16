@@ -1,8 +1,32 @@
 # Delivery
-An example of delivery site built using Django + Angular
+An example of delivery application built using Django.
 
 
-### Run backend server
+### Requirements
+* python 3.8
+* mongoDB
+
+### Run server
+
+#### Local
+
+By default, the server runs on port 8989.
+```bash
+$ cd backend
+$ chmod +x ./bin/run
+$ ./bin/run
+```
+
+The port can changed by adding it as parameter on running run script.
+```bash
+$ cd backend
+$ chmod +x ./bin/run
+$ ./bin/run 8080
+```
 
 
-### Run frontend server
+#### Docker
+ 
+```bash
+$ docker-compose up  
+``` 

@@ -17,6 +17,8 @@ pytest-django = "*"
 pytest-asyncio = "*"
 channels-redis = "*"
 djongo = "*"
+pillow = "*"
+openpyxl = "*"
 
 [requires]
 python_version = "3.8"
