@@ -6,6 +6,7 @@ from .models import Product
 from .models import Store
 from .models import Order
 from .models import OrderProduct
+from .models import SubCategory
 
 
 class ProviderAdmin(admin.ModelAdmin):
@@ -23,14 +24,21 @@ admin.site.register(Consumer, ConsumerAdmin)
 
 
 class CategoryAdmin(admin.ModelAdmin):
-    pass
+    list_display = ['name', 'image_tag']
 
 
 admin.site.register(Category, CategoryAdmin)
 
 
+class SubCategoryAdmin(admin.ModelAdmin):
+    list_display = ['name', 'category', 'image_tag']
+
+
+admin.site.register(SubCategory, SubCategoryAdmin)
+
+
 class ProductAdmin(admin.ModelAdmin):
-    pass
+    list_display = ['name', 'get_small_image']
 
 
 admin.site.register(Product, ProductAdmin)

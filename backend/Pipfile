@@ -19,6 +19,10 @@ channels-redis = "*"
 djongo = "*"
 pillow = "*"
 openpyxl = "*"
+bs4 = "*"
+requests = "*"
+django-image-cropping = "*"
+easy-thumbnails = "*"
 
 [requires]
 python_version = "3.8"

@@ -43,7 +43,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'apps.market',
     'drf_yasg',
-    'channels'
+    'channels',
+    'easy_thumbnails',
+    'image_cropping'
 ]
 
 MIDDLEWARE = [
@@ -85,7 +87,7 @@ DATABASES = {
         'ENGINE': 'djongo',
         'NAME': 'delivery',
         'HOST': 'localhost',
-        'PORT': '21017',
+        'PORT': '27017'
     }
 }
 
@@ -136,3 +138,6 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
     'PAGE_SIZE': 100
 }
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
